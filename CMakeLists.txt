@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(palktrack VERSION 0.1 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
@@ -9,14 +10,17 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.8)
 
 qt_add_executable(apppalktrack
-    main.cpp
+    src/main.cpp
 )
 
 qt_add_qml_module(apppalktrack
     URI palktrack
     VERSION 1.0
     QML_FILES
-        Main.qml
+        qml/Main.qml
+        SOURCES src/paystub.h src/paystub.cpp
+        SOURCES src/workdatabase.h src/workdatabase.cpp
+        SOURCES src/shift.h src/shift.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
