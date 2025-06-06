@@ -1,4 +1,5 @@
 import QtQuick
+import palktrack
 
 Window {
     id: page
@@ -7,11 +8,18 @@ Window {
     visible: true
     title: qsTr("Palktrack")
 
-    Text {
-        id: helloText
-        text: "Hello world!"
-        y: 30
-        anchors.horizontalCenter: page.horizontalCenter
-        font.pointSize: 24; font.bold: true
+    WorkDatabase {
+        id: db
+    }
+
+    // InputScreen {
+    //     id: inputScreen
+    // }
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            db.dummyMethod()
+        }
     }
 }

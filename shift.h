@@ -10,14 +10,17 @@ typedef std::chrono::year_month_day date;
 public:
     Shift();
     Shift(date start_date, date end_date, double start_time=-1, double end_time=-1);
-    bool setStartDate();
+
+    bool operator==(Shift rval);
+
+    bool setStartDate(date day);
     date getStartDate();
-    bool setEndDate();
+    bool setEndDate(date day);
     date getEndDate();
     double getDuration();
-    bool setStartTime();
+    bool setStartTime(double t);
     double getStartTime();
-    bool setEndTime();
+    bool setEndTime(double t);
     double getEndTime();
 
 private:

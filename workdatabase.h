@@ -2,14 +2,19 @@
 #define WORKDATABASE_H
 
 #include <QObject>
-#include <chrono>
+#include <QtQmlIntegration/qqmlintegration.h>
 #include "paystub.h"
+#include <chrono>
 
 class WorkDatabase : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 public:
     explicit WorkDatabase(QObject *parent = nullptr);
+
+    Q_INVOKABLE
+    void dummyMethod();
 
     /*
      * Add a paystub to the DB.

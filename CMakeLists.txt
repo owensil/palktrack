@@ -10,7 +10,7 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.8)
 
 qt_add_executable(apppalktrack
-    src/main.cpp
+    main.cpp
 )
 
 qt_add_qml_module(apppalktrack
@@ -18,9 +18,14 @@ qt_add_qml_module(apppalktrack
     VERSION 1.0
     QML_FILES
         qml/Main.qml
-        SOURCES src/paystub.h src/paystub.cpp
-        SOURCES src/workdatabase.h src/workdatabase.cpp
-        SOURCES src/shift.h src/shift.cpp
+        SOURCES paystub.h paystub.cpp
+        SOURCES workdatabase.h workdatabase.cpp
+        SOURCES shift.h shift.cpp
+        QML_FILES qml/DateInput.qml
+        QML_FILES qml/PaystubInput.qml
+        QML_FILES qml/ShiftInput.qml
+        QML_FILES qml/InputScreen.qml
+        SOURCES
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
