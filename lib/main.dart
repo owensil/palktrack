@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'models/paystub.dart';
-import 'widgets/paystub_form.dart';
+import 'paystub_form/paystub_form.dart';
 import 'widgets/paystub_history_page.dart';
 
 void main() {

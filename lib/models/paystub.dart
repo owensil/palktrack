@@ -151,13 +151,11 @@ class EarningLine {
   final String description;
   final double hours;
   final double rate;
-  final double amount;
 
   EarningLine({
     required this.description,
     required this.hours,
     required this.rate,
-    required this.amount,
   });
 
   factory EarningLine.fromJson(Map<String, dynamic> json) {
@@ -165,7 +163,6 @@ class EarningLine {
       description: json['description'] as String? ?? '',
       hours: (json['hours'] as num?)?.toDouble() ?? 0.0,
       rate: (json['rate'] as num?)?.toDouble() ?? 0.0,
-      amount: (json['amount'] as num?)?.toDouble() ?? 0.0,
     );
   }
 
@@ -173,7 +170,6 @@ class EarningLine {
         'description': description,
         'hours': hours,
         'rate': rate,
-        'amount': amount,
       };
 
   @override
